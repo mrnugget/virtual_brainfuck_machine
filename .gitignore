@@ -1,2 +1,5 @@
 interpreter/machine
 virtualmachine/machine
+
+# Remove IDEA or Gogland Files
+.idea/
