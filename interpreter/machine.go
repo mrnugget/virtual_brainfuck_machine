@@ -31,8 +31,14 @@ func (m *Machine) Execute() {
 		switch ins {
 		case '+':
 			m.memory[m.dp]++
+			if (m.memory[m.dp]==256) {
+				m.memory[m.dp]=0
+			}
 		case '-':
 			m.memory[m.dp]--
+			if (m.memory[m.dp]==-1) {
+				m.memory[m.dp]=255
+			}
 		case '>':
 			m.dp++
 		case '<':
