@@ -31,8 +31,14 @@ func (m *Machine) Execute() {
 		switch ins.Type {
 		case Plus:
 			m.memory[m.dp] += ins.Argument
+			if (m.memory[m.dp]==256) {
+				m.memory[m.dp]=0
+			}
 		case Minus:
 			m.memory[m.dp] -= ins.Argument
+			if (m.memory[m.dp]==-1) {
+				m.memory[m.dp]=255
+			}
 		case Right:
 			m.dp += ins.Argument
 		case Left:
